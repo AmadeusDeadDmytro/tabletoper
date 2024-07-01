@@ -1,13 +1,15 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import theme from "@/styled/style-constants";
 
 const { COLORS, OFFSET } = theme;
 
 const Container = styled.div`
-	border-bottom: 1px solid ${COLORS.PRIMARY};
-	border-left: 1px solid ${COLORS.PRIMARY};
+	--border-angle: 0deg;
+	box-shadow: 0px 2px 8px hsl(0 0% 0% / 35%);
+	animation: ${borderAngleRotate} 2s infinite linear;
+	border: 0.5rem solid transparent;
 	margin-top: ${OFFSET * 2}px;
-	border-radius: 0 0 0 4px;
+	border-radius: 12px;
 	padding: ${OFFSET}px;
 	user-select: none;
 	width: 100%;
