@@ -15,8 +15,12 @@ class UserStore {
 		if (!user) {
 			// TODO: Handle login error
 		}
-		localStorage.setItem("user", JSON.stringify(user));
 		this.user = user;
+		this.updateUserInLocalStorage();
+	};
+
+	updateUserInLocalStorage = () => {
+		localStorage.setItem("user", JSON.stringify(this.user));
 	};
 
 	getUserFromLocalStorage = () => {
@@ -24,7 +28,7 @@ class UserStore {
 		if (authUser) {
 			this.user = JSON.parse(authUser);
 		}
-	}
+	};
 }
 
 export const userStore = new UserStore();
