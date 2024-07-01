@@ -9,26 +9,20 @@ const HomePage = observer(() => {
 	const [activeTab, setActiveTab] = React.useState(0);
 	const { games } = React.useContext(appStoreCtx);
 
+	
 	return (
 		<S.Container>
-			<SC.Flex h="flex-start">
-				<S.Tab active={activeTab === 0} onClick={() => setActiveTab(0)}>
+			<SC.Flex h="flex-start" gap="0">
+				<S.Tab id="0" active={activeTab.toString()} onClick={() => setActiveTab(0)}>
 					Create
 				</S.Tab>
-				<S.Tab active={activeTab === 1} onClick={() => setActiveTab(1)}>
+				<S.Tab id="1" active={activeTab.toString()} onClick={() => setActiveTab(1)}>
 					Join
 				</S.Tab>
 			</SC.Flex>
 			<S.Content>
-				{activeTab === 0 ? (
-					<>
-						{games.map((game) => (
-							<GameCard key={game.id} game={game} />
-						))}
-					</>
-				) : (
-					<span>Join Table</span>
-				)}
+				{activeTab === 0 && games.map((game) => <GameCard key={game.id} game={game} />)}
+				{activeTab === 1 && <span>Join Table</span>}
 			</S.Content>
 		</S.Container>
 	);

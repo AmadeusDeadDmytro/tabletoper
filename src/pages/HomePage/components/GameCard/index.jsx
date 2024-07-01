@@ -6,7 +6,7 @@ import game1Logo from "@/img/logo_dragonmaster.jpg";
 const GameCard = ({ game }) => {
 	return (
 		<S.Container>
-			<SC.Flex v="flex-start">
+			<SC.Flex v="flex-start" h="flex-start">
 				<S.GameLogo src={game1Logo} alt="game logo" />
 				<div>
 					<S.GameTitle>{game.title}</S.GameTitle>

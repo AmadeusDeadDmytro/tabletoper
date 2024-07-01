@@ -14,7 +14,7 @@ const Tab = styled.div`
 	padding: ${OFFSET}px;
 	cursor: pointer;
 	user-select: none;
-	background-color: ${(props) => (props.isActive ? COLORS.PRIMARY : "transparent")};
+	background-color: ${({ active, id }) => (active === id ? COLORS.PRIMARY : "transparent")};
 	color: ${(props) => (props.active ? COLORS.LIGHT : COLORS.PRIMARY)};
 	&:hover {
 		background-color: ${COLORS.SECONDARY};
