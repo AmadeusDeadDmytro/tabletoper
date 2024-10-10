@@ -4,7 +4,7 @@ import userStoreCtx from '@/store/userStore';
 
 const UnauthenticatedApp = () => {
     const { login } = useContext(userStoreCtx);
-
+s;
     return (
         <S.Wrapper>
             <h2>Log in to join an app</h2>

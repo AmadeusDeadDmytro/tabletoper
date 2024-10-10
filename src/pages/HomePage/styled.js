@@ -7,6 +7,7 @@ const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	color: ${COLORS.PRIMARY};
+	z-index: 1;
 `;
 
 const Tab = styled.div`
@@ -15,7 +16,7 @@ const Tab = styled.div`
 	cursor: pointer;
 	user-select: none;
 	background-color: ${({ active, id }) => (active === id ? COLORS.PRIMARY : "transparent")};
-	color: ${(props) => (props.active ? COLORS.LIGHT : COLORS.PRIMARY)};
+	color: ${({ active }) => (active ? COLORS.LIGHT : COLORS.PRIMARY)};
 	&:hover {
 		background-color: ${COLORS.SECONDARY};
 		color: ${COLORS.LIGHT};
